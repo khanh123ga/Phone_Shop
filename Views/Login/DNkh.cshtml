@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "DNkh";
+}
+
+<div class="container">
+    <div class="login">
+
+
+        <div class="col-md-6 login-do">
+            @using (Html.BeginForm("DNkh", "Login", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <p>Email</p>
+                <div class="login-mail">
+
+                    @Html.TextBox("acc")
+
+                    <i class="glyphicon glyphicon-envelope"></i>
+                </div>
+                <p>Passwork</p>
+                <div class="login-mail">
+
+                    @Html.Password("pass")
+
+
+                    <i class="glyphicon glyphicon-lock"></i>
+                </div>
+                <a class="news-letter " href="#">
+                    <label class="checkbox1"><input type="checkbox" name="checkbox"><i> </i>Forget Password</label>
+                </a>
+                <label class="hvr-skew-backward">
+                    <input type="submit" value="login">
+                </label>
+
+            }
+
+        </div>
+        <div class="col-md-6 login-right">
+            <h3>Please register account </h3>
+
+            <a style="margin-top: 20px;
+				           margin-left: 70px;" href="Regiter" class=" hvr-skew-backward">Register</a>
+
+        </div>
+
+        <div class="clearfix"> </div>
+
+    </div>
+
+</div>
+

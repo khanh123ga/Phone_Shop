@@ -1,0 +1,72 @@
+﻿@model LTW_HQK_shop.Models.BaiViet
+@{
+    ViewBag.Title = "Chitietbaiviet";
+}
+
+
+<head>
+    <link rel="stylesheet" href="https://pc.baokim.vn/css/bk.css">
+    <link type="text/css" rel="stylesheet" href="https://tabletplaza.vn/var/cache/misc/assets/design/themes/bright_theme/css/standalone.11b4585198497a1194c434e1e798f3d71701683214.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<div class="content-dev blog-single">
+
+    <h1 class="ty-mainbox-title" itemprop="name">
+
+        <div class="row-fluid">
+            <div style="text-align:center;padding-top:30px;" class="span12 title">
+                <span class="ty-blog__post-title">@Model.tenbv</span>
+            </div>
+        </div>
+
+
+    </h1>
+
+
+    <div class="ty-mainbox-body">
+        <div class="row-fluid content-wrapper">
+            <div class="span12 desc">
+                <div class="ty-wysiwyg-content">
+
+
+                    <div class="row-fluid">
+                        
+                        <div class="span14" style="float: revert;margin: auto;width:100%">
+                            <div class="ty-blog__img-block block-image-main">
+                                <div>
+                                    <img style="width: auto; height: 500px; margin-left: 25%;padding-top:30px;" src="~/Images/@Model.hinhDD" />
+                                </div>
+                                <div style="padding-top">
+                                    @Model.noidung
+                                </div>
+                                <div style="padding-top:30px;">
+                                    <div class="ty-blog__date">"@Model.ngaydang</div>
+                                    <div class="ty-blog__author">@Model.taikhoan </div>
+                                </div>
+                                
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+            </div>
+
+
+
+
+
+
+           
+        </div>
+    </div>
+
+
+
+
+

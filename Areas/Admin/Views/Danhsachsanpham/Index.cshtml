@@ -1,0 +1,93 @@
+﻿@using LTW_HQK_shop.Models
+@{
+    ViewBag.Title = "Index";
+    List<SanPham> list = (List<SanPham>)ViewData["danhsachsanpham"];
+}
+<head>
+    <style>
+        th {
+            text-align: center;
+        }
+    </style>
+</head>
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Sản phẩm đang kinh doanh trong hệ thống</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Danh sách sản phẩm</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card" style="margin-left: 20px;">
+            <!-- /.card-header -->
+            <div class="card-body">
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Mã loại</th>
+                            <th>Tên</th>
+                            <th>Giá</th>
+                            <th>Hình ảnh</th>
+                            <th>Lệnh</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (SanPham l in list)
+                        {
+                            <tr style="border: 1px solid #dee2e6;">
+                                <td>@l.maSP</td>
+                                <td>@l.tenSP</td>
+                                <td>@l.giaBan</td>
+                                <td>
+                                    <img style="width:200px;height:200px;" src="~/Images/@l.hinhDD" />
+                                </td>
+                                <td style="width: 100%; display: flex; justify-content: center; border: none;">
+
+                                    @using (Html.BeginForm("Xoa", "Danhsachsanpham", FormMethod.Post))
+                                    {
+                                        <input type="hidden" name="masp" value="@l.maLoai" />
+                                        <button style="margin-right: 4px" class="btn btn-danger"> Xóa</button>
+                                    }
+
+                                    @using (Html.BeginForm("Chinhsua", "Danhsachsanpham", FormMethod.Post))
+                                    {
+                                        <input type="hidden" name="masp" value="@l.maLoai" />
+                                        <button class="btn btn-primary"> Chỉnh sửa</button>
+                                    }
+
+                                    @using (Html.BeginForm("Duyet", "Danhsachsanpham"))
+                                    {
+                                        <input type="hidden" name="masp" value="@l.maSP" />
+                                        if (l.daduyet == true)
+                                        {
+                                            <button style="margin-left: 6px;" class="btn btn-warning">Ngưng</button>
+                                        }
+                                        else
+                                        {
+                                            <button style="margin-left: 6px;" class="btn btn-default">Duyệt</button>
+                                        }
+                                    }
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!-- /.content -->

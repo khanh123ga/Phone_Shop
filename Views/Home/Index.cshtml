@@ -1,0 +1,247 @@
+﻿@using LTW_HQK_shop.Models
+@{
+    ViewBag.Title = "Home";
+    List<SanPham> list = (List<SanPham>)ViewData["danhsachsanpham"];
+    List<LoaiSP> list2 = (List<LoaiSP>)ViewData["loaisanpham"];
+}
+<div class="container">
+
+    <div class="head-top">
+
+        <div class="col-sm-8 col-md-offset-2 h_menu4">
+            <nav class="navbar nav_bottom" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header nav_2">
+                    <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                    <ul class="nav navbar-nav nav_1">
+                        @{
+
+
+                            foreach (LoaiSP i in list2)
+                            {
+
+                                <li>@Html.ActionLink(@i.tenLoai, "ProductCatogary", new { id = @i.maLoai }, "Home") </li>
+
+
+                            }
+                        }
+
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+
+
+        <div style="padding-right:100px;" class="col-sm-2 search-right">
+            <ul class="heart">
+
+                <li><a style="font-size:20px;" class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i></a></li>
+
+            </ul>
+
+            <div style="margin-top:13px;" class="cart box_1">
+                <a href="@Url.Action("ShowToCart","Cart")">
+                    <h3>
+                        <i style="font-size:20px;" class="bi bi-bag-fill"></i>
+                        @Html.Action("BagCart", "Cart")
+                    </h3>
+                </a>
+                <div class="clearfix"> </div>
+
+
+            </div>
+
+
+            <!----->
+            <!---pop-up-box---->
+            <link href="~/Content/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+            <script src="~/Scripts/jquery.magnific-popup.js" type="text/javascript"></script>
+            <!---//pop-up-box---->
+            <div id="small-dialog" class="mfp-hide">
+                <div class="login-search">
+                    <div class="login">
+                        <input type="submit" value="">
+                        <input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}">
+                    </div>
+                    <p>iPhone 15 Pro Max</p>
+                    <p>Samsung Galaxy Z Flip5 5G</p>
+                    <p>Macbook Pro M2 (2022) | Chính hãng Apple Việt Nam</p>
+                    <p>Macbook Pro 14 inch M2 MAX 2023</p>
+                </div>
+            </div>
+            <script>
+                    $(document).ready(function () {
+                        $('.popup-with-zoom-anim').magnificPopup({
+                            type: 'inline',
+                            fixedContentPos: false,
+                            fixedBgPos: true,
+                            overflowY: 'auto',
+                            closeBtnInside: true,
+                            preloader: false,
+                            midClick: true,
+                            removalDelay: 300,
+                            mainClass: 'my-mfp-zoom-in'
+                        });
+
+                    });
+            </script>
+            <!----->
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div style="background-image: url('../../Images/apple-iphone-15-pro.jpg'); background-size: cover;" class="banner">
+    <div class="container">
+        <section class="rw-wrapper">
+            <h1 class="rw-sentence">
+                <span style="color: aliceblue;">iPhone 15 Pro Max</span>
+                <div class="rw-words rw-words-1">
+                    <span style="color: aliceblue;">Khung Titanium</span>
+                    <span style="color: aliceblue;">Action Button mới</span>
+                    <span style="color: aliceblue;">Blue Titanium</span>
+                    <span style="color: aliceblue;">Black Titanium</span>
+                    <span style="color: aliceblue;">White Titanium</span>
+                    <span style="color: aliceblue;">Natural Titanium</span>
+
+                </div>
+                <div class="rw-words rw-words-2">
+                    <span>Giá niêm yết: 37.990.000 đ</span>
+                    <span>Giảm giá 11%</span>
+                    <span>33.990.000 đ</span>
+                    <span>Bạn tiết kiệm: 4.000.000 đ</span>
+                    <span>Tặng ốp lưng bảo vệ máy</span>
+                    <span>Ưu đãi Sạc 20w Anker Chỉ : 190.000đ</span>
+                </div>
+            </h1>
+        </section>
+    </div>
+</div>
+<!--content-->
+<div class="content">
+    <div class="container">
+        <div class="content-top">
+            <div class="col-md-6 col-md">
+                <div class="col-1">
+                    <a href="single.html" class="b-link-stroke b-animate-go  thickbox">
+                        <img src="images/logo.png" class="img-responsive" alt="" /><div class="b-wrapper1 long-img"><p class="b-animate b-from-right    b-delay03 ">Lorem ipsum</p><label class="b-animate b-from-right    b-delay03 "></label><h3 class="b-animate b-from-left    b-delay03 ">Trendy</h3></div>
+                    </a>
+
+                    <!---<a href="single.html"><img src="images/pi.jpg" class="img-responsive" alt=""></a>-->
+                </div>
+                <div class="col-2">
+                    <span>Hot</span>
+                    <h2><a href="single.html">iPhone 15 Pro Max 256G</a></h2>
+                    <p style="font-size: 20px;
+							           font-style: oblique;">
+                        iPhone 15 Pro Max sở hữu kích thước màn hình 6.7 inch. Nổi bật từ thiết kế Titan bền chắc chuẩn hàng không vũ
+                        trụ chắc chắn mà vẫn mỏng nhẹ - lần đầu tiên xuất hiện trên iPhone, bề mặt nhám tinh tế, các cạnh được bo tròn và viền máy mỏng nhất từng có trên iPhone.
+                    </p>
+
+
+                    <a style="font-size: 18px;
+							          font-weight: bold;"
+                       href="iPhone 15 Pro Max 256G.html" class="buy-now">Thêm vào giỏ hàng ngay</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-md1">
+                <div class="col-3">
+                    <a href="single.html">
+                        <img style="height: 300px;" src="~/Images/apple-iphone-15-pro.jpg" class="img-responsive" alt="">
+
+                        <div class="col-pic">
+                            <p>Smartphone</p>
+                            <label></label>
+
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-3">
+                    <a href="single.html">
+                        <img style="height: 300px;" src="~/Images/Tablet.jpg" class="img-responsive" alt="">
+                        <div class="col-pic">
+                            <p>Tablet</p>
+                            <label></label>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="col-3">
+                    <a href="single.html">
+                        <img style="height: 300px;" src="~/Images/anhloptop.jpg" class="img-responsive" alt="">
+                        <div class="col-pic">
+                            <p>Loptop</p>
+                            <label></label>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<!--container-->
+<div class="container">
+
+    <div class="content-mid">
+        <h3>Trending</h3>
+
+        @foreach (SanPham item in list)
+        {
+            <div class="col-md-3 item-grid simpleCart_shelfItem">
+                <div class=" mid-pop">
+                    <div class="pro-img">
+
+                        <img style="height:200px;" src="~/Images/@item.hinhDD" class="img-responsive" alt="" />
+
+                    </div>
+
+
+                    <div class="mid-1">
+                        <div class="women">
+                            <div class="women-top">
+                                <span>@item.tenLoai</span>
+                                <h6>@Html.ActionLink(@item.tenSP, "Detail", new { id = @item.maSP }, "Home")</h6>
+                            </div>
+
+                            <div class="img item_add">
+
+                                <a href="/Cart/AddToCart/@item.maSP">
+                                    <img src="~/Images/ca.png">
+                                </a>
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="mid-2">
+                            <p><label>@item.gianiemyet</label><em class="item_price">$@item.giaBan</em></p>
+
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
+
+
+

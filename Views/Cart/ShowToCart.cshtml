@@ -1,0 +1,89 @@
+﻿@model LTW_HQK_shop.Models.Cart
+
+@{
+    ViewBag.Title = "ShowToCart";
+
+}
+
+
+<main style="padding-top:80px;" role="main">
+
+    <div class="container mt-4">
+
+        <h1 class="text-center">Giỏ hàng</h1>
+        <div class="row">
+            <div class="col col-md-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Loại sản phẩm</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Ảnh</th>
+                            <th>Số lượng</th>
+                            <th>Đơn giá</th>
+                            <th>Thành tiền</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="datarow">
+                        @foreach (var item in Model.Items)
+                        {
+                            double tong = Convert.ToDouble(item.sanpham.giaBan * item.soluong);
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(Model => item.sanpham.tenLoai)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(Model => item.sanpham.tenSP)
+                                </td>
+                                <td>
+                                    <img src="~/Images/@item.sanpham.hinhDD" style="width:50px; height:50px;" />
+                                </td>
+                                <td>
+                                    @using (Html.BeginForm("Update", "Cart"))
+                                    {
+                                        <input type="hidden" value="@item.sanpham.maSP" name="id" />
+                                        <input type="number" max="10" min="1" value="@item.soluong" name="sl" />
+                                        <input type="submit" value="Update" />
+                                    }
+
+
+
+                                </td>
+                                <td> @Html.DisplayFor(Model => item.sanpham.giaBan)</td>
+                                <td> @tong</td>
+                                <td>
+                                    <a style="text-decoration:none; color:black;" href="/Cart/Remove/@item.sanpham.maSP">
+                                        Xóa sản phẩm
+                                    </a>
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+
+
+
+
+
+                    </tbody>
+                </table>
+                <p> Tổng tiền: @Model.tongtien()</p>
+                <a href="@Url.Action("Index","Home")" class="btn btn-primary btn-md">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; <<< Mua tiếp
+                </a>
+
+                <a href="@Url.Action("Index","Checkout")" class="btn btn-primary btn-md">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Thanh toán >>>
+                </a>
+
+            </div>
+        </div>
+    </div>
+    <!-- End block content -->
+</main>
+
+
+

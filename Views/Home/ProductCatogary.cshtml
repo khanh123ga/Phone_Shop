@@ -1,0 +1,52 @@
+﻿
+@model IEnumerable<LTW_HQK_shop.Models.SanPham>
+@{
+    ViewBag.Title = "ProductCatogary";
+}
+
+
+
+
+<div class="container">
+
+    <div style="margin-top: 60px" class="content-mid">
+        <h3 style="text-align:center">Danh mục sản phẩm theo loại</h3>
+        @foreach (var item in Model)
+        {
+
+            <div class="col-md-3 item-grid simpleCart_shelfItem">
+                <div class=" mid-pop">
+                    <div class="pro-img">
+                        <img style="height:200px;" src="~/Images/@item.hinhDD" class="img-responsive" alt="" />
+                    </div>
+                    <div class="mid-1">
+                        <div class="product">
+                            <div class="product-top">
+                                <span>@item.tenLoai</span>
+                                <h6>@Html.ActionLink(@item.tenSP, "Detail", new { id = @item.maSP }, "Products")</h6>
+                            </div>
+
+                            <div class="img item_add">
+
+                                <a href="/Cart/AddToCart/@item.maSP">
+                                    <img src="~/Images/ca.png">
+                                </a>
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="mid-2">
+                            <p><label>@item.gianiemyet</label><em class="item_price">$@item.giaBan</em></p>
+
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        }
+        <button class="btn btn-secondary" style="margin-top:50%; position:relative; left:2%">@Html.ActionLink("Back To Home", "Index", "Home")</button>
+    </div>
+
+</div>
+

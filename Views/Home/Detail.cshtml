@@ -1,0 +1,107 @@
+﻿@model LTW_HQK_shop.Models.SanPham
+@{
+    ViewBag.Title = "Detail";
+
+}
+
+
+<div class="single">
+
+
+    <div class="container">
+        <div class="col-md-9">
+            <div class="col-md-5 grid">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li data-thumb="~/Images/si.jpg" style="list-style-type:none">
+                            <div class="thumb-image"> <img src="~/Images/@Model.hinhDD" data-imagezoom="true" class="img-responsive" /> </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-7 single-top-in">
+                <div class="span_2_of_a1 simpleCart_shelfItem">
+                    <h3>@Model.tenSP</h3>
+                    <p class="in-para">
+                        Tặng ốp lưng bảo vệ máy
+                        -Ưu Đãi Dán Màn Hình GKZ chỉ 99.000đ ( Giá NY : 199.000đ)
+                        -Ưu đãi Sạc 20w Anker Chỉ : 190.000đ
+                    </p>
+                    <p class="in-para"> Giảm thêm 5% tối đa 200.000đ khi thanh toán qua Kredivo</p>
+                    <p class="in-para"> Trả góp 0% bằng thẻ tín dụng Visa/Master/JCB qua cổng MPOS</p>
+
+                    <div class="price_single">
+                        <span class="reducedfrom item_price">@Model.giaBan</span>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <h4 class="quick">Reviews</h4>
+                    <p class="quick_desc">@Model.ndtomtat</p>
+
+
+
+
+                    <div class="img item_add">
+
+                        <a href="/Cart/AddToCart/@Model.maSP">
+                            <img src="~/Images/ca.png">
+                        </a>
+
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+
+            </div>
+            <div class="clearfix"> </div>
+
+            <div class="tab-head">
+                <nav class="nav-sidebar">
+                    <ul class="nav tabs">
+                        <li class="active"><a href="#tab1" data-toggle="tab">@Model.mota1 </a></li>
+                        <li class=""><a href="#tab2" data-toggle="tab">@Model.mota2</a></li>
+                        <li class=""><a href="#tab3" data-toggle="tab">@Model.mota3</a></li>
+
+                    </ul>
+                </nav>
+                <div class="tab-content one">
+                    <div class="tab-pane active text-style" id="tab1">
+                        <div class="facts">
+                            <p>@Model.chitiet1</p>
+
+                        </div>
+
+                    </div>
+                    <div class="tab-pane text-style" id="tab2">
+
+                        <div class="facts">
+                            <p>@Model.chitiet2</p>
+
+                        </div>
+
+
+                    </div>
+                    <div class="tab-pane text-style" id="tab3">
+
+                        <div class="facts">
+                            <p>@Model.chitiet3</p>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</div>
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a6eac65a33164742a38ca47fd165a619" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="ShopModel.Adminn" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.BaiViet" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.chiTietDH" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.donHang" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Khachhang" Width="1.5" PointX="3.875" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.LoaiSP" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.SanPham" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="ShopModel.FK__BaiViet__taikhoa__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK__donHang__taikhoa__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK__SanPham__taikhoa__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK__chiTietDH__iddh__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK__chiTietDH__maSP__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK__donHang__makh__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK__SanPham__maLoai__4222D4EF" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

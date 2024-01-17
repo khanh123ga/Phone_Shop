@@ -1,0 +1,61 @@
+﻿@model IEnumerable<LTW_HQK_shop.Models.BaiViet>
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <link rel="stylesheet" href="https://pc.baokim.vn/css/bk.css">
+    <link type="text/css" rel="stylesheet" href="https://tabletplaza.vn/var/cache/misc/assets/design/themes/bright_theme/css/standalone.11b4585198497a1194c434e1e798f3d71701683214.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+</head>
+
+
+<div class="row-fluid block-first">
+    <div class="span12 post-first">
+        <div class="ty-blog__item">
+            <div class="ty-blog__img-block">
+                <img style="margin-left:17%; margin-top:30px;" src="~/Images/newbanner.jpg" />
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+<div class="row">
+
+    @foreach (var bv in Model)
+    {
+        <div style="width: 25%; height:25%; margin-top: 60px; margin-left: 7%; " class="col-xl-4 col-md-4">
+            <div style="width:400px;height:500px;" class="single_latest_blog">
+                <div class="thumb">
+                    <a href="@Url.Action("Chitietbaiviet","News", new {mabv = @bv.mabv})">
+                        <img style="width:400px; height:200px;" src="~/Images/@bv.hinhDD" />
+                    </a>
+
+                </div>
+                <div class="content_blog">
+                    <div class="date">
+                        <p>@string.Format("{0: MMMM dd yyyy}", bv.ngaydang)</p>
+                    </div>
+
+                    <div class="blog_meta">
+                        <h3>@Html.ActionLink(@bv.tenbv, "Chitietbaiviet", new { mabv = @bv.mabv }, "News")</h3>
+
+                    </div>
+                    <div class="blog_text">
+                        @bv.ndtomtat
+                    </div>
+                    <p>Bởi: @bv.taikhoan</p>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+
+
+
